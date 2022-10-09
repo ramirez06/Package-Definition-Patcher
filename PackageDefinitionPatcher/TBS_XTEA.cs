@@ -49,7 +49,7 @@ namespace PackageDefinitionPatcher
 			uint CurrSum = Sum;
 
 			for (int i = 0; i < 32; i++)
-            {
+            		{
 				b -= (uint)((int)(((a << 4) ^ (a >> 5)) + a) ^ ((int)(CurrSum) + StaticKeys[(CurrSum >> 11) & 3]));
 				CurrSum += Delta;
 				a -= (uint)((int)(((b << 4) ^ (b >> 5)) + b) ^ ((int)(CurrSum) + StaticKeys[CurrSum & 3]));
@@ -92,7 +92,7 @@ namespace PackageDefinitionPatcher
 		}
 
 		unsafe static byte[] XTEA_DecryptBytes(byte[] EncryptedBytes)
-        {
+       	 	{
 			byte[] resultbytes = new byte[EncryptedBytes.Length];
 			BinaryReader sourcebr = new BinaryReader(new MemoryStream(EncryptedBytes));
 			BinaryWriter destbw = new BinaryWriter(new MemoryStream(resultbytes));
@@ -103,13 +103,13 @@ namespace PackageDefinitionPatcher
 			int b = 0;
 
 			for (int i = 0; i < blockCount; i++)
-            {
+            		{
 				a = sourcebr.ReadInt32();
 				b = sourcebr.ReadInt32();
 				XTEA_DecryptBlock(&a, &b);
 				destbw.Write(a);
 				destbw.Write(b);
-            }
+            		}
 
 			sourcebr.Close();
 			destbw.Close();
@@ -117,16 +117,16 @@ namespace PackageDefinitionPatcher
 			int resultlength = resultbytes.Length;
 			int tcnt = 1;
 			for (tcnt = 1; tcnt < resultlength; tcnt++)
-            {
+           	 	{
 				if (resultbytes[resultlength - tcnt] != 0x00)
-                {
+                		{
 					tcnt--;
 					break;
 				}
-            }
+            		}
 
 			return resultbytes.Take((resultlength - tcnt)).ToArray();
-        }
+        	}
 
 		public static byte[] XTEA_GetEncryptedBytes(byte[] Source)
 		{
@@ -149,19 +149,19 @@ namespace PackageDefinitionPatcher
 		}
 
 		public static byte[] XTEA_GetDecryptedBytes(byte[] Source)
-        {
+        	{
 			byte[] newbytes = XTEA_DecryptBytes((Source.Skip(HeadersLength)).ToArray());
 
 			return newbytes;
-        }
+        	}
 
 		public static void XTEA_EncryptFile(string SourcePath, string DestinationPath)
-        {
+        	{
 			File.WriteAllBytes(DestinationPath, XTEA_GetEncryptedBytes(File.ReadAllBytes(SourcePath)));
-        }
+        	}
 
 		public static void XTEA_DecryptFile(string SourcePath, string DestinationPath)
-        {
+        	{
 			File.WriteAllBytes(DestinationPath, XTEA_GetDecryptedBytes(File.ReadAllBytes(SourcePath)));
 		}
 	}
