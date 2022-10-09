@@ -3,6 +3,7 @@
 //Another big thanks to A.W. Stanley for his h6xtea source code.
 
 //The Big Shell make the total conversion to C# code
+//For more informations like links just check the Readme
 
 using System;
 using System.Collections.Generic;
