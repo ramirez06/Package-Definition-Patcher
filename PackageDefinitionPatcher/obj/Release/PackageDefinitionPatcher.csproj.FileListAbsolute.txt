@@ -1,7 +1,0 @@
-C:\Users\Risner\source\repos\PackageDefinitionPatcher\PackageDefinitionPatcher\obj\Release\PackageDefinitionPatcher.csproj.AssemblyReference.cache
-C:\Users\Risner\source\repos\PackageDefinitionPatcher\PackageDefinitionPatcher\obj\Release\PackageDefinitionPatcher.csproj.CoreCompileInputs.cache
-C:\Users\Risner\source\repos\PackageDefinitionPatcher\PackageDefinitionPatcher\bin\Release\PackageDefinitionPatcher.exe.config
-C:\Users\Risner\source\repos\PackageDefinitionPatcher\PackageDefinitionPatcher\bin\Release\PackageDefinitionPatcher.exe
-C:\Users\Risner\source\repos\PackageDefinitionPatcher\PackageDefinitionPatcher\bin\Release\PackageDefinitionPatcher.pdb
-C:\Users\Risner\source\repos\PackageDefinitionPatcher\PackageDefinitionPatcher\obj\Release\PackageDefinitionPatcher.exe
-C:\Users\Risner\source\repos\PackageDefinitionPatcher\PackageDefinitionPatcher\obj\Release\PackageDefinitionPatcher.pdb
